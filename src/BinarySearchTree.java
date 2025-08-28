@@ -1,4 +1,4 @@
-public class BinarySearchTree {
+public class BinarySearchTree implements MapADT {
 
 	private class BSTNode { // private class to hold a tree node
 
