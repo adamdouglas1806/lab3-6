@@ -6,7 +6,7 @@ import org.junit.Test;
 public class PriorityQueueTest {
 
 	/*
-	 * Part 1: complete
+	 * Part 3: complete
 	 */
 	
 	PriorityQueue pq;
