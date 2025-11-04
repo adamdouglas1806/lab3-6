@@ -172,6 +172,21 @@ public class BinarySearchTree implements MapADT {
 
 		// Part 1: complete
 		public void inOrderTraversalPrint() {
+			
+			if (leftChild != null) {
+				//Checks if there is a child to the left of the tree.
+				leftChild.inOrderTraversalPrint();
+				//If there is a child then the function will recursively call itself (this will repeat until there is no left child).
+			}
+			
+			System.out.println(this.getValue());
+			//This will print out the value of the current value (it will print the left children, then the middle then the right children).
+			
+			if (rightChild != null) {
+				//Checks if there is a child to the right of the tree.
+				rightChild.inOrderTraversalPrint();
+				//If there is a child then the function will recursively call itself (this will repeat until there is no right child).
+			}
 
 		}
 
