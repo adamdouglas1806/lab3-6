@@ -180,7 +180,7 @@ public class BinarySearchTree implements MapADT {
 			}
 			
 			System.out.println(this.getValue());
-			//This will print out the value of the current value (it will print the left children, then the middle then the right children).
+			//This will print out the value of the current child (it will print the left children, then the middle then the right children).
 			
 			if (rightChild != null) {
 				//Checks if there is a child to the right of the tree.
@@ -193,6 +193,21 @@ public class BinarySearchTree implements MapADT {
 		// Part 2: complete
 		public void inOrderTraversal(DLinkedList dl) {
 
+			if (leftChild != null) {
+				//Checks if there is a child to the left of the tree.
+				leftChild.inOrderTraversal(dl);
+				//If there is a child then the function will recursively call itself (this will repeat until there is no left child).
+			}
+			
+			dl.addAtTail(this.getValue());
+			//Adds the value of the current child to the linked list.
+			
+			if (rightChild != null) {
+				//Checks if there is a child to the right of the tree.
+				rightChild.inOrderTraversal(dl);
+				//If there is a child then the function will recursively call itself (this will repeat until there is no right child).
+			}
+			
 		}
 
 	}
@@ -244,8 +259,13 @@ public class BinarySearchTree implements MapADT {
 		DLinkedList<Integer> dll = new DLinkedList<>();
 		/* your code goes here */
 
-		/* remove this */
-		return null;
+		if (rootNode != null) {
+			//Checks if the tree is empty (if it was then there is no need to traverse it).
+			rootNode.inOrderTraversal(dll);
+			//Calls the inOrderTraversal method which passes through the doubly linked list.
+		}
+		return dll;
+		//Will return the linked list.
 	}
 
 	public static void main(String[] args) {
