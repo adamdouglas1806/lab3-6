@@ -20,6 +20,19 @@ public class Sort {
 	 */
 	public static void sort(int[] arr){	
 
+		PriorityQueue pq = new PriorityQueue(10);
+		//Creates a new priority queue which will later temporarily hold the values in the array.
+		
+		for (int i : arr) {
+			pq.insert(i);
+		}
+		//The loop will repeat for each element in the array. It will add each element from the array to the priority queue.
+		
+		for (int i = 0; i < arr.length; i++) {
+			arr[i] = pq.removeMin();
+		}
+		//The loop will repeat for the length of the array. It will now add the element back into the array from the priority queue starting from the min value.
+		
 	}
 	
 	public static void main(String[] args){
